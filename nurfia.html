@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurfia | Slider Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+    <header class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-links">
+                <a href="ordertracking.html">Order Tracking</a> <a href="contactus.html">Contact Us</a>  <a href="about.html">About us</a>
+            </div>
+            <div class="promo-text">SUMMER SALE... EXPRESS INTERNATIONAL DELIVERY</div>
+            <div class="top-links">
+                <a href="#">English <i class="fas fa-chevron-down"></i></a>
+                <a href="#">USD <i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="middle-header">
+    <div class="container header-main">
+    <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+        <div class="search-area">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Type here to search">
+        </div>
+        <div class="logo-area"><a href="nurfia.html" class="logo">NURFIA</a></div>
+        <div class="icons-area">
+            <div class="icon-item"><i class="far fa-user"></i></div>
+            <div class="icon-item">
+                <i class="far fa-heart"></i>
+                <span class="badge">0</span>
+            </div>
+            <div class="icon-item">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="badge" id="cart-count">0</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav class="main-nav">
+    <div class="container">
+        <ul class="nav-list" id="nav-list">
+            <li class="top-bar-mobile"><a href="ordertracking.html">Order Tracking</a></li>
+            <li class="top-bar-mobile"><a href="contactus.html">Contact Us</a></li>
+            <li class="top-bar-mobile"><a href="about.html">About us</a></li>
+            
+            <li><a href="nurfia.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Shop <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="room.html">Living Room</a></li>
+                    <li><a href="kitchen.html">Kitchen</a></li>
+                    <li><a href="bedroom.html">Bedroom</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <section class="slider-container">
+        
+        <div class="slide active" style="background-image: url('asset/images/slider-04.webp');">
+            <div class="hero-content">
+                <h1>DISCOVERING THE BEST<br>FURNITURE FOR YOUR HOME</h1>
+                <p>Thoughtfully designed furniture blends function and aesthetics. Clean lines, warm textures, and timeless quality enhance every modern living space.</p>
+                <a href="#" class="btn-hero">VIEW COLLECTION</a>
+            </div>
+        </div>
+
+        <div class="slide" style="background-image: url(asset/images/slider-01.webp);">
+            <div class="hero-content">
+                <h1>MODERN TEXTURES<br>& PREMIUM QUALITY</h1>
+                <p>Explore unique fabrics and cozy designs that redefine comfort. Our collection focuses on detail and sustainability.</p>
+                <a href="#" class="btn-hero">SHOP NOW</a>
+            </div>
+        </div>
+
+        <button class="arrow prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="arrow next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+        
+        <div class="dots-container">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+
+    </section>
+
+    <section class="feature-grid-section">
+    <div class="container">
+        
+        <div class="top-icons-bar">
+            <div class="icon-box">
+                <i class="fas fa-box"></i>
+                <div class="icon-text">
+                    <h3>World wide Delivery</h3>
+                    <p>Receive your order anywhere in the world</p>
+                </div>
+            </div>
+            <div class="icon-box">
+                <i class="fas fa-headset"></i>
+                <div class="icon-text">
+                    <h3>Customer Service</h3>
+                    <p>Talk to our experts by chat or e-mail</p>
+                </div>
+            </div>
+            <div class="icon-box">
+                <i class="fas fa-lock"></i>
+                <div class="icon-text">
+                    <h3>Secure Payment</h3>
+                    <p>Don't worry, all orders are processed securely</p>
+                </div>
+            </div>
+            <div class="icon-box">
+                <i class="fas fa-medal"></i>
+                <div class="icon-text">
+                    <h3>Loyalty Program</h3>
+                    <p>Collect points and enjoy a host of benefits!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-feature-grid">
+            
+            <div class="grid-col left-col">
+                <div class="text-content">
+                    <h2>Subtly designed,<br>never ordinary.<br>Hexagonal coffee</h2>
+               
+                </div>
+                <div class="small-prod">
+                    <img src="asset/images/image-07.webp" alt="Chair">
+                </div>
+            </div>
+
+            <div class="grid-col center-col">
+                <div class="big-img-container">
+                    <img src="asset/images/imgc.webp" alt="Room Set">
+                </div>
+            </div>
+
+            <div class="grid-col right-col">
+                <div class="product-card">
+                    <img src="asset/images/product-12.webp" alt="Cabinet">
+                    <div class="prod-info">
+                        <p class="name">Baxton Studio Hartman Mid-Century Modern Walnut Brown...</p>
+                        <p class="price">$ 51.59</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <script src="script.js"></script>
+
+  <section class="discount-banner-area">
+    <div class="container">
+        <div class="discount-wrapper">
+            <div class="discount-value">
+                -35%
+            </div>
+            
+            <div class="discount-info">
+                <h3>Super discount for your first purchase</h3>
+                <p>Use discount code in checkout page..</p>
+            </div>
+            
+            <div class="coupon-box">
+                HELLO4587J
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="product-category-slider">
+    <div class="container">
+        <div class="slider-header">
+            <h2 class="section-title">Redefine Your Wardrobe</h2>
+            <div class="filter-tabs">
+                <button class="tab-btn active" onclick="filterProducts('bedroom', this)">Bedroom</button>
+
+                <button class="tab-btn" onclick="filterProducts('chairs', this)">Chairs</button>
+
+                <button class="tab-btn" onclick="filterProducts('living-room', this)">Living Room</button> 
+            </div>
+        </div>
+
+        <div class="product-slider-grid" id="productGrid">
+            </div>
+        
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</section> 
+
+<section class="exclusive-cards-section">
+    <div class="container">
+        <div class="cards-wrapper">
+            
+            <div class="ex-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('asset/images/CARD01.PNG');">
+                <div class="card-content">
+                    <span class="tag">EXCLUSIVE PRODUCT</span>
+                    <h3>Distinctive forms define spaces.</h3>
+                    <p>Natural tones made timeless.</p>
+                </div>
+            </div>
+
+            <div class="ex-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('asset/images/CARDS02.PNG');">
+                <div class="card-content">
+                    <span class="tag">EXCLUSIVE PRODUCT</span>
+                    <h3>Refined comfort meets design.</h3>
+                    <p>Soft textures shape interiors.</p>
+                </div>
+            </div>
+
+            <div class="ex-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('asset/images/CARDS03.PNG');">
+                <div class="card-content">
+                    <span class="tag">EXCLUSIVE PRODUCT</span>
+                    <h3>Sculptural details create balance.</h3>
+                    <p>Minimal accents feel intentional.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="new-arrivals-slider">
+    <div class="container">
+        <div class="slider-header">
+            <h2 class="section-title">New Arrivals</h2>
+            <div class="filter-tabs">
+                <button class="arrival-tab-btn"onclick="filterArrivals('accessories', this)">Accessories</button>
+                <button class="arrival-tab-btn active"onclick="filterArrivals('kitchen', this)">Kitchen</button>
+                <button class="arrival-tab-btn"onclick="filterArrivals('living-room', this)">Living Room</button>
+            </div>
+        </div>
+
+        <div class="product-slider-grid" id="arrivalGrid">
+            </div>
+        
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</section>
+
+<section class="video-section-container">
+        <video autoplay loop muted playsinline class="bg-video">
+            <source src="asset/video/video01 (1).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="video-overlay">
+            <div class="blur-overlay"></div>
+        </div>
+
+        <div class="video-content">
+            <h1 class="video-heading">DISCOVERING THE BEST <br> FURNITURE FOR YOUR HOME</h1>
+            <p class="video-subtext">Carefully designed pieces meet modern living. Balanced forms and thoughtful details create timeless interiors for everyday comfort and refined lifestyle experiences.</p>
+            <button class="view-collection-btn">VIEW COLLECTION</button>
+        </div>
+    </section>
+
+    <section class="categories-section">
+    <div class="container">
+        <div class="categories-header">
+            <h2>Our Popular Categories</h2>
+            <p>Carefully selected collections. Designed for modern living.</p>
+        </div>
+
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="asset/images/clock.webp" alt="Accessories">
+                </div>
+                <div class="category-info">
+                    <span class="category-name">Accessories</span>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="asset/images/bedroom.webp" alt="Bedroom">
+                </div>
+                <div class="category-info">
+                    <span class="category-name">Bedroom</span>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="asset/images/chair.webp" alt="Chairs">
+                </div>
+                <div class="category-info">
+                    <span class="category-name">Chairs</span>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="asset/images/dressing.webp" alt="Dresses">
+                </div>
+                <div class="category-info">
+                    <span class="category-name">Dresses</span>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="asset/images/kitchen.webp" alt="Kitchen">
+                </div>
+                <div class="category-info">
+                    <span class="category-name">Kitchen</span>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="asset/images/lightning.webp" alt="Lighting">
+                </div>
+                <div class="category-info">
+                    <span class="category-name">Lighting</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>.
+
+<section class="info-section">
+    <div class="info-container">
+        <div class="content-border-wrapper">
+            
+            <div class="info-flex-layout">
+                <div class="content-col">
+                    <h2 class="main-title">Inspired interiors built with purpose. Crafted for everyday living</h2>
+                    <p class="sub-text">Carefully curated furniture designed for balance. Natural tones meet modern comfort, creating calm spaces where form and function feel effortlessly connected.</p>
+                    <p class="detail-text">In every detail, quality takes priority throughout the design process. Thoughtful materials are selected to ensure lasting durability and comfort. Refined proportions create harmony between form and function. Each piece is designed to adapt naturally to everyday use. The result is a timeless interior experience built for modern lifestyles.</p>
+                    <a href="#" class="view-btn">VIEW COLLECTION</a>
+                </div>
+
+                <div class="image-col">
+                    <img src="asset/images/contentimg.webp" alt="Furniture Design">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="logo-section">
+    <div class="logo-container">
+        <div class="logo-grid">
+            <div class="logo-item">
+                <img src="asset/images/LG07-removebg-preview.png" alt="Designer Logo">
+            </div>
+            <div class="logo-item">
+                <img src="asset/images/LG02-removebg-preview.png" alt="Can't Logo">
+            </div>
+            <div class="logo-item">
+                <img src="asset/images/LG004 - Copy.WEBP" alt="Push Yourself Logo">
+            </div>
+             <div class="logo-item">
+                <img src="asset/images/LG09-removebg-preview.png" alt="Push Yourself Logo">
+            </div>
+            <div class="logo-item">
+                <img src="asset/images/LG04-removebg-preview.png" alt="Idea Logo">
+            </div>
+            <div class="logo-item">
+                <img src="asset/images/LG06-removebg-preview.png" alt="Walk Logo">
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+    <footer class="site-footer">
+        
+        <div class="footer-top-border"></div>
+
+        <div class="footer-container">
+            
+            <div class="footer-col">
+                <h4 class="col-title">Company</h4>
+                <ul class="col-links">
+                    <li><a href="#">Careers for Nurfia</a></li>
+                    <li><a href="#">About Nurfia</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Nurfia Devices</a></li>
+                    <li><a href="#">Customer reviews</a></li>
+                    <li><a href="#">Social Responsibility</a></li>
+                    <li><a href="#">Store Locations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="col-title">Resources</h4>
+                <ul class="col-links">
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Refund and Returns Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Cookie Settings</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="col-title">Help & Support</h4>
+                <ul class="col-links">
+                    <li><a href="#">Sell on Nurfia</a></li>
+                    <li><a href="#">Sell Your Services on Nurfia</a></li>
+                    <li><a href="#">Sell on Nurfia Business</a></li>
+                    <li><a href="#">Sell Your Apps on Nurfia</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                    <li><a href="#">Sell-Publish with Us</a></li>
+                    <li><a href="#">Become an Nurfia Vendor</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4 class="col-title">Subscribe to our emails</h4>
+                <p class="newsletter-text">Subscribe to receive all our updates and offers, and get a 10% discount on your first purchase.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" class="email-input">
+                    <button type="submit" class="submit-btn"><i class="fas fa-arrow-right"></i></button>
+                </form>
+                
+                <p class="newsletter-terms">By subscribing you agree to our <strong>Terms & Conditions</strong> and <strong>Privacy & Cookies Policy</strong>.</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom-border"></div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p class="copyright-text">Copyright 2026 © Nurfia WordPress Theme. All rights reserved. Powered by KLBTheme.</p>
+                
+                <div class="payment-logos">
+                    <img src="asset/images/P01-removebg-preview.png" alt="Payment 1">
+                    <img src="asset/images/P02-removebg-preview.png" alt="Payment 2">
+                    <img src="asset/images/P05-removebg-preview.png" alt="Payment 3">
+                    <img src="asset/images/P08-removebg-preview.png" alt="Payment 4">
+                </div>
+            </div>
+        </div>
+    </footer>
+</html>

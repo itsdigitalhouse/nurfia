@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurfia | Slider Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-links">
+                <a href="ordertracking.html">Order Tracking</a> <a href="contactus.html">Contact Us</a>  <a href="about.html">About us</a>
+            </div>
+            <div class="promo-text">SUMMER SALE... EXPRESS INTERNATIONAL DELIVERY</div>
+            <div class="top-links">
+                <a href="#">English <i class="fas fa-chevron-down"></i></a>
+                <a href="#">USD <i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="middle-header">
+    <div class="container header-main">
+    <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+        <div class="search-area">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Type here to search">
+        </div>
+        <div class="logo-area"><a href="nurfia.html" class="logo">NURFIA</a></div>
+        <div class="icons-area">
+            <div class="icon-item"><i class="far fa-user"></i></div>
+            <div class="icon-item">
+                <i class="far fa-heart"></i>
+                <span class="badge">0</span>
+            </div>
+            <div class="icon-item">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="badge" id="cart-count">0</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav class="main-nav">
+    <div class="container">
+        <ul class="nav-list" id="nav-list">
+            <li class="top-bar-mobile"><a href="ordertracking.html">Order Tracking</a></li>
+            <li class="top-bar-mobile"><a href="contactus.html">Contact Us</a></li>
+            <li class="top-bar-mobile"><a href="about.html">About us</a></li>
+            
+            <li><a href="nurfia.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Shop <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="room.html">Living Room</a></li>
+                    <li><a href="kitchen.html">Kitchen</a></li>
+                    <li><a href="bedroom.html">Bedroom</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </div>
+</nav>
+
+  <header class="living-header-section">
+    <div class="living-overlay">
+        <div class="living-content">
+            <h1 class="living-title">Living Room</h1>
+            <p class="living-subtitle">
+                Experience the perfect blend of master craftsmanship and timeless elegance 
+                designed for your comfort.
+            </p>
+            <nav class="living-breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span class="active">Living Room</span>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="modern-shop-page">
+    <div class="container shop-wrapper">
+        
+        <aside class="filter-sidebar">
+            <div class="filter-block">
+                <h4>Categories</h4>
+                <div class="category-links">
+                    <label class="custom-check">Living Room <input type="checkbox" checked><span class="checkmark"></span></label>
+                    <label class="custom-check">Bedroom <input type="checkbox"><span class="checkmark"></span></label>
+                    <label class="custom-check">Dining Room <input type="checkbox"><span class="checkmark"></span></label>
+                </div>
+            </div>
+
+            <div class="filter-block">
+                <h4>Colors</h4>
+                <div class="color-picker">
+                    <span class="color-circle dark" title="Dark Wood"></span>
+                    <span class="color-circle oak" title="Oak"></span>
+                    <span class="color-circle gray" title="Gray Fabric"></span>
+                    <span class="color-circle white" title="Minimal White"></span>
+                </div>
+            </div>
+
+            <div class="filter-block">
+                <h4>Price Range</h4>
+                <div class="price-input-area">
+                    <input type="range" min="0" max="1000" class="modern-range">
+                    <div class="price-labels"><span>$0</span><span>$1000</span></div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="products-main">
+            <div class="product-grid">
+                
+                <div class="modern-product-card">
+                    <div class="product-image-container">
+                        <img src="asset/images/sofa04.webp" alt="Sofa Name">
+                        <div class="product-overlay-buttons">
+                            <button class="icon-btn"><i>👁</i></button>
+                            <button class="icon-btn" onclick="addToCart('Sofa 1', 450)"><i>🛒</i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Modern Fabric Sofa</h3>
+                        <p class="product-price">$450.00</p>
+                    </div>
+                </div>
+                <div class="modern-product-card">
+                    <div class="product-image-container">
+                        <img src="asset/images/sofa03.webp" alt="Chair Name">
+                        <div class="product-overlay-buttons">
+                            <button class="icon-btn"><i>👁</i></button>
+                            <button class="icon-btn" onclick="addToCart('Chair 2', 150)"><i>🛒</i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Velvet Armchair</h3>
+                        <p class="product-price">$150.00</p>
+                    </div>
+                </div>
+                 <div class="modern-product-card">
+                    <div class="product-image-container">
+                        <img src="asset/images/sofa05.webp" alt="Chair Name">
+                        <div class="product-overlay-buttons">
+                            <button class="icon-btn"><i>👁</i></button>
+                            <button class="icon-btn" onclick="addToCart('Chair 2', 150)"><i>🛒</i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Velvet Armchair</h3>
+                        <p class="product-price">$150.00</p>
+                    </div>
+                </div>
+                 <div class="modern-product-card">
+                    <div class="product-image-container">
+                        <img src="asset/images/chair.webp" alt="Chair Name">
+                        <div class="product-overlay-buttons">
+                            <button class="icon-btn"><i>👁</i></button>
+                            <button class="icon-btn" onclick="addToCart('Chair 2', 150)"><i>🛒</i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Velvet Armchair</h3>
+                        <p class="product-price">$150.00</p>
+                    </div>
+                </div>
+                 <div class="modern-product-card">
+                    <div class="product-image-container">
+                        <img src="asset/images/chair01.webp" alt="Chair Name">
+                        <div class="product-overlay-buttons">
+                            <button class="icon-btn"><i>👁</i></button>
+                            <button class="icon-btn" onclick="addToCart('Chair 2', 150)"><i>🛒</i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Velvet Armchair</h3>
+                        <p class="product-price">$150.00</p>
+                    </div>
+                </div>
+                 <div class="modern-product-card">
+                    <div class="product-image-container">
+                        <img src="asset/images/chair02.webp" alt="Chair Name">
+                        <div class="product-overlay-buttons">
+                            <button class="icon-btn"><i>👁</i></button>
+                            <button class="icon-btn" onclick="addToCart('Chair 2', 150)"><i>🛒</i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Velvet Armchair</h3>
+                        <p class="product-price">$150.00</p>
+                    </div>
+                </div>
+                 <div class="modern-product-card">
+                    <div class="product-image-container">
+                        <img src="asset/images/table.webp" alt="Chair Name">
+                        <div class="product-overlay-buttons">
+                            <button class="icon-btn"><i>👁</i></button>
+                            <button class="icon-btn" onclick="addToCart('Chair 2', 150)"><i>🛒</i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Velvet Armchair</h3>
+                        <p class="product-price">$150.00</p>
+                    </div>
+                </div>
+                 <div class="modern-product-card">
+                    <div class="product-image-container">
+                        <img src="asset/images/table01.webp" alt="Chair Name">
+                        <div class="product-overlay-buttons">
+                            <button class="icon-btn"><i>👁</i></button>
+                            <button class="icon-btn" onclick="addToCart('Chair 2', 150)"><i>🛒</i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Velvet Armchair</h3>
+                        <p class="product-price">$150.00</p>
+                    </div>
+                </div>
+                 <div class="modern-product-card">
+                    <div class="product-image-container">
+                        <img src="asset/images/table02.webp" alt="Chair Name">
+                        <div class="product-overlay-buttons">
+                            <button class="icon-btn"><i>👁</i></button>
+                            <button class="icon-btn" onclick="addToCart('Chair 2', 150)"><i>🛒</i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Velvet Armchair</h3>
+                        <p class="product-price">$150.00</p>
+                    </div>
+                </div>
+                 <div class="modern-product-card">
+                    <div class="product-image-container">
+                        <img src="asset/images/table03.webp" alt="Chair Name">
+                        <div class="product-overlay-buttons">
+                            <button class="icon-btn"><i>👁</i></button>
+                            <button class="icon-btn" onclick="addToCart('Chair 2', 150)"><i>🛒</i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Velvet Armchair</h3>
+                        <p class="product-price">$150.00</p>
+                    </div>
+                </div>
+                 <div class="modern-product-card">
+                    <div class="product-image-container">
+                        <img src="asset/images/cupboard01.webp" alt="Chair Name">
+                        <div class="product-overlay-buttons">
+                            <button class="icon-btn"><i>👁</i></button>
+                            <button class="icon-btn" onclick="addToCart('Chair 2', 150)"><i>🛒</i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Velvet Armchair</h3>
+                        <p class="product-price">$150.00</p>
+                    </div>
+                </div>
+
+                <div class="modern-product-card">
+                    <div class="product-image-container">
+                        <img src="asset/images/cupboard02.webp" alt="Table Name">
+                        <div class="product-overlay-buttons">
+                            <button class="icon-btn"><i>👁</i></button>
+                            <button class="icon-btn" onclick="addToCart('Table 3', 300)"><i>🛒</i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Wooden Coffee Table</h3>
+                        <p class="product-price">$300.00</p>
+                    </div>
+                </div>
+
+                </div>
+        </main>
+    </div>
+</section>
+<script src="script.js"></script>
+</body>
+
+<footer class="site-footer">
+        
+        
+
+        <div class="footer-container">
+            
+            <div class="footer-col">
+                <h4 class="col-title">Company</h4>
+                <ul class="col-links">
+                    <li><a href="#">Careers for Nurfia</a></li>
+                    <li><a href="#">About Nurfia</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Nurfia Devices</a></li>
+                    <li><a href="#">Customer reviews</a></li>
+                    <li><a href="#">Social Responsibility</a></li>
+                    <li><a href="#">Store Locations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="col-title">Resources</h4>
+                <ul class="col-links">
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Refund and Returns Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Cookie Settings</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="col-title">Help & Support</h4>
+                <ul class="col-links">
+                    <li><a href="#">Sell on Nurfia</a></li>
+                    <li><a href="#">Sell Your Services on Nurfia</a></li>
+                    <li><a href="#">Sell on Nurfia Business</a></li>
+                    <li><a href="#">Sell Your Apps on Nurfia</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                    <li><a href="#">Sell-Publish with Us</a></li>
+                    <li><a href="#">Become an Nurfia Vendor</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4 class="col-title">Subscribe to our emails</h4>
+                <p class="newsletter-text">Subscribe to receive all our updates and offers, and get a 10% discount on your first purchase.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" class="email-input">
+                    <button type="submit" class="submit-btn"><i class="fas fa-arrow-right"></i></button>
+                </form>
+                
+                <p class="newsletter-terms">By subscribing you agree to our <strong>Terms & Conditions</strong> and <strong>Privacy & Cookies Policy</strong>.</p>
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p class="copyright-text">Copyright 2026 © Nurfia WordPress Theme. All rights reserved. Powered by KLBTheme.</p>
+                
+                <div class="payment-logos">
+                    <img src="asset/images/P01-removebg-preview.png" alt="Payment 1">
+                    <img src="asset/images/P02-removebg-preview.png" alt="Payment 2">
+                    <img src="asset/images/P05-removebg-preview.png" alt="Payment 3">
+                    <img src="asset/images/P08-removebg-preview.png" alt="Payment 4">
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

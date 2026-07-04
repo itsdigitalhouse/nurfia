@@ -1,0 +1,2952 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica', Arial, sans-serif;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 1. Top Bar */
+.top-bar {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.top-links a:hover {
+    color: #ccc;
+}
+
+/* 2. Middle Header */
+.middle-header {
+    padding: 25px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.search-area i {
+    font-size: 18px;
+    color: #333;
+}
+
+.search-area input {
+    border: none;
+    padding: 8px 15px;
+    font-size: 15px;
+    outline: none;
+    width: 250px;
+    color: #666;
+}
+
+.logo-area {
+    flex: 1;
+    text-align: center;
+}
+
+.logo {
+    font-size: 38px;
+    font-weight: 900;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.icons-area {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.icon-item {
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 3. Navigation */
+.main-nav {
+    padding: 15px 0;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.nav-list li a i {
+    font-size: 11px;
+    margin-left: 4px;
+}
+
+.nav-list li a:hover {
+    color: #555;
+}
+/* Nav List styling */
+.nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    margin-right: 25px;
+    position: relative; /* Dropdown ko align karne ke liye zaroori hai */
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Dropdown Menu styling */
+.dropdown-menu {
+    display: none; /* Default mein hidden rahega */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1000;
+    list-style: none;
+    padding: 10px 0;
+    border-top: 2px solid #000; /* Modern look */
+}
+
+.dropdown-menu li {
+    margin: 0;
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    font-size: 14px;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Hover par menu dikhane ke liye logic */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/*HEADER SLIDER*/
+/* ... (Pichla Navigation CSS yahan rahega) ... */
+
+/* Basic Reset (Already added, repeating for context) */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica', Arial, sans-serif; }
+.container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
+
+/* ... (Top-Bar, Middle-Header, Main-Nav CSS copy-paste karein yahan) ... */
+
+
+/* ===========================
+   HERO SLIDER CSS (New)
+   =========================== */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Height from Nav down */
+    overflow: hidden;
+    background-color: #333; /* Fallback color */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Smooth transition */
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Background Overlay (Text ko wazeh karne ke liye) */
+.slide::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark shade */
+    z-index: -1;
+}
+
+/* Hero Text Content */
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    max-width: 600px;
+    margin: 0 auto 35px;
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Hero Button */
+.btn-hero {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Slider Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 20px;
+    z-index: 10;
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+.arrow:hover { opacity: 1; }
+.prev { left: 30px; }
+.next { right: 30px; }
+
+/* Dot Indicators */
+.dots-container {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+/*SLIDER END*
+/* Container Alignment */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Feature Section Wrapper */
+.feature-grid-section {
+    padding: 80px 0;
+    background: #fff;
+    overflow: hidden; /* Taaki koi cheez bahar na nikle */
+}
+
+/* Top Icons Bar Fix */
+.top-icons-bar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 70px;
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-box i { font-size: 18px; color: #111; }
+.icon-text h3 { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+.icon-text p { font-size: 11px; color: #888; margin: 0; }
+
+/* Main Grid - Exact Alignment */
+.main-feature-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr 280px; /* Specific widths for side columns */
+    gap: 60px; /* Har cheez ke beech barabar gap */
+    align-items: start;
+}
+
+/* Left Column Styling */
+.left-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-col h2 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+
+.left-col p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+.small-prod img {
+    width: 100%;
+    max-width: 200px; /* Chair ko chota rakhne ke liye */
+    display: block;
+}
+
+/* Center Image Alignment */
+.center-col {
+    width: 100%;
+}
+
+.big-img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+}
+
+/* Right Column Alignment */
+.right-col {
+    padding-top: 100px; /* Cabinet ko thora niche karne ke liye */
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.prod-info .name {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.prod-info .price {
+    font-size: 15px;
+    font-weight: 800;
+    color: #000;
+}
+/* ===== MOBILE RESPONSIVE ===== */
+
+@media (max-width: 768px){
+
+    .top-icons-bar{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:25px 18px;
+        margin-bottom:50px;
+    }
+
+    .icon-box{
+        align-items:flex-start;
+    }
+
+    .icon-box i{
+        font-size:20px;
+        margin-top:3px;
+    }
+
+    .icon-text h3{
+        font-size:12px;
+        line-height:1.4;
+    }
+
+    .icon-text p{
+        font-size:10px;
+        line-height:1.5;
+    }
+
+}
+/*% BAR*/
+/* DISCOUNT BANNER STYLING */
+.discount-banner-area {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.discount-wrapper {
+    background-color: #fff0f3; /* Light pink background jaisa image mein hai */
+    background-image: url('image_47b25f.png'); /* Percentage pattern background */
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 50px;
+    border-radius: 4px;
+    border: 1px solid #fce4ec;
+}
+
+.discount-value {
+    font-size: 60px;
+    font-weight: 900;
+    color: #e91e63; /* Pink/Red color jaisa screenshot mein hai */
+    letter-spacing: -2px;
+}
+
+.discount-info {
+    flex-grow: 1;
+    padding-left: 40px;
+}
+
+.discount-info h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #e91e63;
+    margin-bottom: 5px;
+}
+
+.discount-info p {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+.coupon-box {
+    border: 2px dashed #e91e63; /* Dashed border jaisa image mein hai */
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #e91e63;
+    background: transparent;
+    text-transform: uppercase;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .discount-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .discount-info {
+        padding-left: 0;
+    }
+}
+/*CATEGORY SLIDER*/
+.product-category-slider { padding: 60px 0; background: #fff; }
+
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.section-title { font-size: 28px; font-weight: 800; color: #111; }
+
+.filter-tabs { display: flex; gap: 20px; }
+
+.tab-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+    padding: 5px 15px;
+    transition: 0.3s;
+}
+
+.tab-btn.active {
+    color: #111;
+    border: 1px solid #111;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Grid Layout */
+.product-slider-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.product-item-card { position: relative; transition: 0.3s; }
+
+.badge-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 2px 8px;
+    font-size: 10px;
+    border-radius: 10px;
+}
+
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #888;
+    cursor: pointer;
+}
+
+.product-img-box img { width: 100%; height: auto; border-radius: 4px; }
+
+.product-info-box { padding-top: 15px; }
+
+.rating-stars { color: #ffb400; font-size: 12px; margin-bottom: 5px; }
+
+.p-name { font-size: 12px; font-weight: 700; color: #333; margin-bottom: 5px; line-height: 1.4; }
+
+.price-row { font-size: 14px; font-weight: 800; }
+
+.old-price { color: #bbb; text-decoration: line-through; font-weight: 400; margin-left: 5px; }
+
+.slider-dots { text-align: center; margin-top: 30px; }
+.dot { height: 8px; width: 8px; background: #ddd; border-radius: 50%; display: inline-block; margin: 0 5px; }
+.dot.active { background: #111; width: 12px; border-radius: 10px; }
+/* ================================================= */
+/* =========== PRODUCT SECTION RESPONSIVE ========== */
+/* ================================================= */
+
+@media (max-width:992px){
+
+    .product-category-slider{
+        padding:50px 0;
+        overflow:hidden;
+    }
+
+    /* ===== HEADER ===== */
+
+    .slider-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+        margin-bottom:35px;
+    }
+
+    .section-title{
+        font-size:26px;
+        line-height:1.3;
+    }
+
+    /* ===== TABS ===== */
+
+    .filter-tabs{
+        display:flex;
+        flex-wrap:wrap;
+        gap:12px;
+    }
+
+    .tab-btn{
+        font-size:13px;
+        padding:10px 18px;
+    }
+
+    /* ===== PRODUCTS ===== */
+
+    .product-slider-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:22px;
+    }
+
+    .product-img-box img{
+        height:260px;
+        object-fit:cover;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+    .product-category-slider{
+        padding:40px 0;
+    }
+
+    .container{
+        width:100%;
+        padding:0 16px;
+    }
+
+    /* ===== HEADER ===== */
+
+    .slider-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
+        margin-bottom:28px;
+    }
+
+    .section-title{
+        font-size:22px;
+        line-height:1.4;
+    }
+
+    /* ===== FILTER BUTTONS ===== */
+
+    .filter-tabs{
+        width:100%;
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .tab-btn{
+        font-size:12px;
+        padding:10px 16px;
+        border-radius:30px;
+    }
+
+    .tab-btn.active{
+        border-radius:30px;
+    }
+
+    /* ===== PRODUCTS GRID ===== */
+
+    .product-slider-grid{
+        display:grid;
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:20px 14px;
+    }
+
+    /* ===== PRODUCT CARD ===== */
+
+    .product-item-card{
+        width:100%;
+        position:relative;
+    }
+
+    .product-item-card:hover{
+        transform:none;
+    }
+
+    /* ===== IMAGE ===== */
+
+    .product-img-box{
+        width:100%;
+        overflow:hidden;
+        border-radius:10px;
+    }
+
+    .product-img-box img{
+        width:100%;
+        height:180px;
+        object-fit:cover;
+        display:block;
+        border-radius:10px;
+    }
+
+    /* ===== BADGE ===== */
+
+    .badge-discount{
+        top:8px;
+        left:8px;
+        font-size:9px;
+        padding:3px 7px;
+        z-index:2;
+    }
+
+    .wishlist-icon{
+        top:8px;
+        right:8px;
+        font-size:15px;
+        z-index:2;
+    }
+
+    /* ===== INFO ===== */
+
+    .product-info-box{
+        padding-top:12px;
+    }
+
+    .rating-stars{
+        font-size:10px;
+        margin-bottom:5px;
+    }
+
+    .p-name{
+        font-size:12px;
+        line-height:1.5;
+        margin-bottom:6px;
+    }
+
+    .price-row{
+        font-size:15px;
+        line-height:1.4;
+    }
+
+    .old-price{
+        font-size:11px;
+        margin-left:4px;
+    }
+
+    /* ===== DOTS ===== */
+
+    .slider-dots{
+        display:none;
+    }
+
+}
+
+
+/* ============== SMALL MOBILE ============== */
+
+@media (max-width:480px){
+
+    .section-title{
+        font-size:20px;
+    }
+
+    .product-slider-grid{
+        gap:18px 12px;
+    }
+
+    .product-img-box img{
+        height:160px;
+    }
+
+    .p-name{
+        font-size:11px;
+    }
+
+    .price-row{
+        font-size:14px;
+    }
+
+}
+
+/*3 CARDS AFTER IMAGE */
+/* Container jo cards ko align rakhta hai */
+.container {
+    max-width: 1200px; /* Isay apne main container ki width ke barabar rakhein */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.exclusive-cards-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.cards-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px; /* Cards ke beech ka barabar gape */
+}
+
+.ex-card {
+    flex: 1; /* Teeno cards barabar width ke rahenge */
+    height: 400px; /* Cards ki height */
+    background-size: cover; /* Image puri tarah fit aayegi */
+    background-position: center;
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.ex-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-content {
+    color: #ffffff;
+    max-width: 280px;
+}
+
+.tag {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.card-content h3 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* Mobile par layout theek karne ke liye */
+@media (max-width: 768px) {
+    .cards-wrapper {
+        flex-direction: column;
+    }
+    .ex-card {
+        height: 300px;
+    }
+}
+/*CARDS SLIDER #2*/
+.new-arrivals-slider { padding: 60px 0; background: #fff; }
+
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.arrival-tab-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+    padding: 5px 15px;
+    transition: 0.3s;
+}
+
+.arrival-tab-btn.active {
+    color: #111;
+    border: 1px solid #111;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Grid Layout for 5 Items */
+.product-slider-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+/* Image Container: Is se height/width same rahegi */
+.product-img-box {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Square shape jaisa images mein hai */
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+}
+
+.product-img-box img {
+    width: 80%; /* Image thodi choti taaki padding lage */
+    height: 80%;
+    object-fit: contain; /* Image stretch nahi hogi */
+}
+
+.badge-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 2px 8px;
+    font-size: 10px;
+    border-radius: 10px;
+}
+
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    color: #111;
+    cursor: pointer;
+}
+
+.product-info-box { padding: 15px 0; }
+.rating-stars { color: #ffb400; font-size: 12px; margin-bottom: 5px; }
+.p-name { font-size: 12px; font-weight: 600; color: #333; margin-bottom: 5px; min-height: 34px; }
+.price-row { font-size: 14px; font-weight: 800; }
+.old-price { color: #bbb; text-decoration: line-through; font-weight: 400; margin-left: 5px; }
+
+.slider-dots { text-align: center; margin-top: 30px; }
+.dot { height: 8px; width: 8px; background: #ddd; border-radius: 50%; display: inline-block; margin: 0 5px; }
+.dot.active { background: #111; width: 12px; border-radius: 10px; }
+/* ================================================= */
+/* ========== NEW ARRIVALS RESPONSIVE ============== */
+/* ================================================= */
+
+.new-arrivals-slider{
+    padding:60px 0;
+    background:#fff;
+    overflow:hidden;
+}
+
+/* ================= HEADER ================= */
+
+.slider-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.section-title{
+    font-size:30px;
+    font-weight:800;
+    color:#111;
+}
+
+/* ================= FILTER BUTTONS ================= */
+
+.filter-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.arrival-tab-btn{
+    background:none;
+    border:none;
+    font-size:14px;
+    color:#888;
+    cursor:pointer;
+    padding:10px 18px;
+    transition:.3s;
+}
+
+.arrival-tab-btn.active{
+    color:#111;
+    border:1px solid #111;
+    border-radius:30px;
+    font-weight:600;
+}
+
+/* ================= PRODUCTS GRID ================= */
+
+.product-slider-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.product-item-card{
+    position:relative;
+    transition:.3s;
+}
+
+.product-item-card:hover{
+    transform:translateY(-8px);
+}
+
+/* ================= IMAGE BOX ================= */
+
+.product-img-box{
+    width:100%;
+    aspect-ratio:1/1;
+    background:#f9f9f9;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    position:relative;
+    border-radius:8px;
+}
+
+.product-img-box img{
+    width:80%;
+    height:80%;
+    object-fit:contain;
+    transition:.4s;
+}
+
+.product-item-card:hover .product-img-box img{
+    transform:scale(1.05);
+}
+
+/* ================= BADGES ================= */
+
+.badge-discount{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:#fff;
+    border:1px solid #eee;
+    padding:3px 8px;
+    font-size:10px;
+    border-radius:20px;
+    z-index:2;
+}
+
+.wishlist-icon{
+    position:absolute;
+    top:10px;
+    right:10px;
+    font-size:16px;
+    color:#111;
+    cursor:pointer;
+    z-index:2;
+}
+
+/* ================= INFO ================= */
+
+.product-info-box{
+    padding:15px 0;
+}
+
+.rating-stars{
+    color:#ffb400;
+    font-size:12px;
+    margin-bottom:6px;
+}
+
+.p-name{
+    font-size:13px;
+    font-weight:600;
+    color:#333;
+    margin-bottom:6px;
+    line-height:1.5;
+    min-height:40px;
+}
+
+.price-row{
+    font-size:15px;
+    font-weight:800;
+}
+
+.old-price{
+    color:#bbb;
+    text-decoration:line-through;
+    font-weight:400;
+    margin-left:5px;
+}
+
+/* ================= DOTS ================= */
+
+.slider-dots{
+    text-align:center;
+    margin-top:30px;
+}
+
+.dot{
+    height:8px;
+    width:8px;
+    background:#ddd;
+    border-radius:50%;
+    display:inline-block;
+    margin:0 5px;
+}
+
+.dot.active{
+    background:#111;
+    width:12px;
+    border-radius:10px;
+}
+
+/* ================================================= */
+/* ================= TABLET ======================== */
+/* ================================================= */
+
+@media (max-width:992px){
+
+    .product-slider-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+/* ================================================= */
+/* ================= MOBILE ======================== */
+/* ================================================= */
+
+@media (max-width:768px){
+
+    .new-arrivals-slider{
+        padding:45px 0;
+    }
+
+    .container{
+        padding:0 16px;
+    }
+
+    /* HEADER */
+
+    .slider-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
+        margin-bottom:30px;
+    }
+
+    .section-title{
+        font-size:24px;
+        line-height:1.3;
+    }
+
+    /* TABS */
+
+    .filter-tabs{
+        width:100%;
+        gap:10px;
+    }
+
+    .arrival-tab-btn{
+        font-size:12px;
+        padding:10px 16px;
+    }
+
+    /* ===== 2 PRODUCTS PER ROW ===== */
+
+    .product-slider-grid{
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:20px 14px;
+    }
+
+    .product-item-card{
+        width:100%;
+    }
+
+    /* IMAGE */
+
+    .product-img-box{
+        border-radius:10px;
+    }
+
+    .product-img-box img{
+        width:75%;
+        height:75%;
+    }
+
+    /* BADGES */
+
+    .badge-discount{
+        top:8px;
+        left:8px;
+        font-size:9px;
+    }
+
+    .wishlist-icon{
+        top:8px;
+        right:8px;
+        font-size:14px;
+    }
+
+    /* INFO */
+
+    .product-info-box{
+        padding-top:12px;
+    }
+
+    .rating-stars{
+        font-size:10px;
+    }
+
+    .p-name{
+        font-size:12px;
+        min-height:auto;
+    }
+
+    .price-row{
+        font-size:14px;
+    }
+
+    .old-price{
+        font-size:11px;
+    }
+
+    /* HIDE DOTS */
+
+    .slider-dots{
+        display:none;
+    }
+
+}
+
+/* ================================================= */
+/* ================= SMALL MOBILE ================== */
+/* ================================================= */
+
+@media (max-width:480px){
+
+    .product-slider-grid{
+        gap:18px 12px;
+    }
+
+    .section-title{
+        font-size:21px;
+    }
+
+}
+/*VIDEO STYLE CSS*/
+/* Reset basic styles */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #fff;
+}
+
+/* Video Section Container */
+.video-section-container {
+    position: relative;
+    width: 100%;
+    /* Max width set to not overflow common slider layouts */
+    max-width: 1600px;
+    /* Height constraint to not be too tall */
+    height: 70vh; /* Viewport height ka 70% */
+    max-height: 700px; /* Max height limit */
+    min-height: 500px; /* Minimum height for readability */
+    margin: 0 auto; /* Centers the container */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Background Video styling */
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    object-fit: cover; /* Video stretch nahi hoga, cover karega */
+}
+
+/* Light Blur Overlay */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Blur applied on a separate layer */
+.blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Light dark tint */
+    backdrop-filter: blur(5px); /* This is the light blur */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+}
+
+/* Content Area */
+.video-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    z-index: 1;
+    max-width: 800px; /* Limits text width */
+}
+
+/* Heading style */
+.video-heading {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+}
+
+/* Subtext style */
+.video-subtext {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent white text */
+}
+
+/* Button style */
+.view-collection-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 15px 35px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    letter-spacing: 0.1em;
+}
+
+/* Button Hover effect */
+.view-collection-btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .video-heading {
+        font-size: 32px;
+    }
+    .video-subtext {
+        font-size: 14px;
+    }
+    .video-section-container {
+        height: 60vh;
+        max-height: 500px;
+    }
+}
+.video-section-container {
+    position: relative;
+    
+    /* 1. Width ko kum karein (e.g., 80% ya 90%) */
+    width: 90%; 
+    
+    /* 2. Maximum width set karein taake boht bari screen pr b phelay nahi */
+    max-width: 1200px; 
+    
+    /* 3. Isay page ke center mein lane ke liye margin use karein */
+    margin: 40px auto; 
+    
+    /* 4. Height ko control mein rakhein */
+    height: 60vh; 
+    max-height: 500px; 
+    
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px; /* Optional: Corners rounded karne ke liye */
+}
+/*CATEGORY CARDS*/
+/* Section Styles */
+.categories-section {
+    padding: 60px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+.categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.categories-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    color: #000;
+}
+
+.categories-header p {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+/* Grid Layout */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 equal columns */
+    gap: 20px;
+}
+
+/* Card Styling */
+.category-card {
+    text-align: center;
+    cursor: pointer;
+}
+
+.category-image {
+    background-color: #f0f0f0; /* Light grey background as in image */
+    border-radius: 4px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.category-image img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.category-image:hover {
+    transform: translateY(-5px);
+}
+
+/* Info Labels */
+.category-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.category-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.category-count {
+    font-size: 12px;
+    color: #000;
+    font-weight: 400;
+    margin-top: -5px; /* Super-script look */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .categories-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+    }
+    .categories-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+/*CONTENT IMG */
+/* 1. Main Section Padding */
+.info-section {
+    width: 100%;
+    padding: 20px 0; /* Section ke bahar ki spacing */
+    background-color: #fff;
+}
+
+/* 2. Container (Jo width control karega) */
+.info-container {
+    max-width: 1200px; /* Isay apne slider ki width ke mutabiq rakhein */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 3. Lines sirf Content ki width tak [Restricted Lines] */
+.content-border-wrapper {
+    border-top: 1px solid #e0e0e0;    /* Uper wali line */
+    border-bottom: 1px solid #e0e0e0; /* Neeche wali line */
+    padding: 60px 0; /* Lines aur content ke darmiyan gap */
+}
+
+/* 4. Flex Layout (Text aur Image ko sath lane ke liye) */
+.info-flex-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* 5. Left Column (Text) */
+.content-col {
+    flex: 1;
+}
+
+.main-title {
+    font-size: 40px;
+    color: #1a1a1a;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.sub-text {
+    font-size: 17px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.detail-text {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* 6. Button Style */
+.view-btn {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.view-btn:hover {
+    background-color: #333;
+}
+
+/* 7. Right Column (Image) */
+.image-col {
+    flex: 1;
+}
+
+.image-col img {
+    width: 100%;
+    height: 500px; /* Height aap apni pasand ke mutabiq set kar sakte hain */
+    object-fit: cover; /* Image kharab nahi hogi */
+    display: block;
+    border-radius: 4px; /* Halka sa rounded corner professional lagta hai */
+}
+
+/* 8. Mobile Responsive Layout */
+@media (max-width: 991px) {
+    .info-flex-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .image-col {
+        order: -1; /* Mobile par image upar aayegi */
+        margin-bottom: 30px;
+    }
+    
+    .main-title {
+        font-size: 30px;
+    }
+}
+/*LOGOS */
+/* 1. Section Wrapper - Padding ko minimum rakha hai */
+.logo-section {
+    width: 100%;
+    padding: 10px 0; /* Uper aur neeche ki faltu jagah khatam */
+    background-color: #fff;
+}
+
+/* 2. Container - Borders ko fully remove kar diya hai */
+.logo-container {
+    max-width: 1200px; /* Isay slider ki width ke mutabiq rakhein */
+    margin: 0 auto;
+    padding: 0 20px;
+    border: none; /* Kisi bhi qism ki line ya border khatam */
+}
+
+/* 3. Logo Grid - Flexbox setup */
+.logo-grid {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0; /* Inner spacing ko zero kar diya */
+}
+
+/* 4. Individual Logo Item */
+.logo-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px; /* Logos ke darmyan halka sa gap */
+    min-width: 120px; 
+}
+
+/* 5. Logo Image Styling */
+.logo-item img {
+    max-width: 110px; /* Logos ka size thora chota kiya hai taake clean lage */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: grayscale(100%); /* Brands jaisa professional look */
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.logo-item img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.08); /* Halka sa zoom on hover */
+}
+
+/* 6. Mobile Responsive */
+@media (max-width: 768px) {
+    .logo-grid {
+        justify-content: center;
+        gap: 20px;
+    }
+    .logo-item {
+        flex: 0 0 45%; /* Mobile par 2-2 logos ek line mein */
+    }
+}
+/*FOOTER*/
+/* Reset basic styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+/* 1. Full Width Dark Footer */
+.site-footer {
+    background-color: #000; /* Sleek black background */
+    color: #fff;
+    padding: 0;
+    max-width: 100%;
+}
+
+/* 2. Horizontal Lines */
+.footer-top-border, .footer-bottom-border {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle white line */
+}
+
+/* 3. Container Width Balance */
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 70px 20px; /* Generous padding for content */
+}
+
+/* 4. Individual Column Styles */
+
+
+.col-title {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.col-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.col-links li {
+    margin-bottom: 12px;
+}
+
+.col-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7); /* Slightly dim white links */
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.col-links a:hover {
+    color: white;
+}
+
+/* 5. Newsletter Column Special Styles */
+.newsletter-col {
+    max-width: 350px;
+}
+
+.newsletter-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.email-input {
+    flex: 1;
+    padding: 15px 50px 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.email-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.submit-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+.newsletter-terms {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+}
+
+.newsletter-terms strong {
+    color: white;
+}
+
+/* 6. Bottom Copyright Section */
+.footer-bottom {
+    background-color: #000;
+    padding: 25px 0;
+}
+
+.footer-bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.copyright-text {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+/* 7. 4 Payment Logos (Bottom Right) */
+.payment-logos {
+    display: flex;
+    gap: 15px;
+}
+
+.payment-logos img {
+    max-height: 30px; /* Set a standard height for all 4 logos */
+    width: auto;
+    filter: brightness(0.9); /* Slightly dimmer professional look */
+}
+
+/* Optional: Grayscale effect from image_edf7bb.png */
+.payment-logos img:hover {
+    filter: brightness(1);
+}
+
+/* 8. Mobile Responsive */
+@media (max-width: 991px) {
+    .footer-container {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .footer-col {
+        flex: 1 1 45%; /* 2 columns on tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-col {
+        flex: 1 1 100%; /* 1 column on mobile */
+        text-align: center;
+    }
+    .footer-bottom-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .newsletter-col {
+        margin: 0 auto;
+    }
+    .email-input {
+        text-align: center;
+    }
+}
+/*ABOUT US HEADER*/
+/* Page Header Section */
+.page-header-about {
+    width: 100%;
+    height: 350px; /* Aap height yahan se adjust kar sakte hain */
+    background-image: url('asset/images/about.webp'); /* Aapki bheji hui image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark shade on image taake text wazeh nazar aaye */
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Halka black shade */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Center Text & Breadcrumb */
+.header-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.header-content h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Breadcrumb Styling (Home / About Us) */
+.breadcrumb {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.breadcrumb a {
+    color: #ddd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #fff;
+}
+
+.breadcrumb span {
+    margin: 0 8px;
+    color: #ccc;
+}
+
+.breadcrumb .active {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .page-header-about {
+        height: 250px;
+    }
+    .header-content h1 {
+        font-size: 32px;
+    }
+}
+/*ABOUT US CONTENT*/
+.about-details-section {
+    padding: 60px 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Heading & Paragraph Styling */
+.main-heading {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #1a1a1a;
+}
+
+.full-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+/* Flexbox for Image and Side Content */
+.flex-content-wrapper {
+    display: flex;
+    gap: 1px;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+.content-image {
+    flex: 1; /* Image half width legi */
+}
+
+.content-image img {
+    width: 92%;
+    height: 550px;
+    display: block;
+}
+
+.side-text {
+    flex: 1; /* Text half width lega */
+}
+
+.text-block {
+    margin-bottom: 30px;
+}
+
+.text-block h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.text-block p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Bottom section gap */
+.bottom-content {
+    margin-top: 50px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .flex-content-wrapper {
+        flex-direction: column; /* Mobile pr image uper text niche ho jayega */
+    }
+    
+    .main-heading {
+        font-size: 26px;
+    }
+}
+/*CONTACT US HEADER*/
+/* Isolated reset styles for header section only */
+.contact-header-section {
+    width: 100%;
+    /* Landscape Height: Isay apni marzi se chota (maslan 180px) ya bara karein */
+    height: 250px;
+    background-image: url('asset/images/contact02.webp'); /* Aapki original image, make sure path correct ho */
+    background-size: cover; /* Cover ensure high horizontal compatibility */
+    background-position: center; /* Image center aligned */
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Optional sleek shadow */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Subtle horizontal thin lines */
+.header-top-line, .header-bottom-line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2); /* Soft white line from image_edf7bb.png */
+    z-index: 2;
+}
+
+.header-top-line { top: 0; }
+.header-bottom-line { bottom: 0; }
+
+/* Subtle Dark Shade to make text stand out over background */
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35); /* Halka black shade */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* Center Content Area */
+.header-content {
+    max-width: 1200px; /* Balance size like footer/main containers */
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    color: #fff;
+    z-index: 2; /* Content above shading and line */
+}
+
+/* Main Heading: Left aligned from image_a2a1bc.jpg but centered overall */
+.header-main-title {
+    font-size: 42px; /* Professional standard size */
+    color: white;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Subheading from reference image_ebfd89.jpg */
+.header-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7); /* Slightly dim white links style */
+    line-height: 1.6;
+    margin-top: 10px;
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contact-header-section {
+        height: 180px; /* Choti height on mobile */
+    }
+    .header-main-title {
+        font-size: 32px;
+    }
+    .header-subtitle {
+        font-size: 13px;
+    }
+}
+/*CONTACT US FORM*/
+.premium-contact-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+    font-family: 'Inter', sans-serif;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-wrapper {
+    display: flex;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* Left Side */
+.contact-side-panel {
+    flex: 1;
+    background: #111;
+    color: #fff;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.tagline { color: #888; text-transform: uppercase; letter-spacing: 3px; font-size: 12px; font-weight: bold; }
+.contact-side-panel h2 { font-size: 38px; margin: 15px 0; line-height: 1.2; }
+.contact-side-panel p { color: #aaa; line-height: 1.6; margin-bottom: 40px; }
+
+.detail-item { margin-bottom: 25px; }
+.detail-item label { display: block; color: #555; font-size: 11px; text-transform: uppercase; margin-bottom: 5px; }
+.detail-item p { color: #fff; margin: 0; font-size: 15px; }
+
+/* Right Side (Form) */
+.form-panel { flex: 1.4; padding: 60px; background: #fff; }
+
+.input-row { display: flex; gap: 20px; }
+
+/* Floating Labels Style */
+.floating-label { position: relative; margin-bottom: 30px; width: 100%; }
+.floating-label input, .floating-label textarea {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-bottom: 2px solid #eee;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    background: transparent;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+
+.floating-label input:focus, .floating-label textarea:focus { border-bottom-color: #000; }
+
+/* Label move up on focus */
+.floating-label input:focus ~ label,
+.floating-label input:not(:placeholder-shown) ~ label,
+.floating-label textarea:focus ~ label,
+.floating-label textarea:not(:placeholder-shown) ~ label {
+    top: -12px;
+    font-size: 12px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Button Styling */
+.prime-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #000;
+    color: #fff;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.4s;
+    width: 100%;
+}
+
+.prime-btn:hover { background: #333; transform: translateY(-3px); }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact-wrapper { flex-direction: column; }
+    .contact-side-panel, .form-panel { padding: 40px; }
+    .input-row { flex-direction: column; gap: 0; }
+}
+/*LIVING ROOM*/
+/* Isolated Header Style for Living Room Page */
+.living-header-section {
+    width: 100%;
+    height: 350px; /* Aap isay 250px ya 400px bhi kar sakte hain */
+    background-image: url('asset/images/living.webp'); /* Apni image ka naam yahan likhein */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark Overlay for Text Clarity */
+.living-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Halka black shade */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Text Styling */
+.living-content {
+    text-align: center;
+    color: #ffffff;
+    max-width: 800px;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.living-title {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.living-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 25px;
+}
+
+/* Breadcrumb Styling */
+.living-breadcrumb {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.living-breadcrumb a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.living-breadcrumb a:hover {
+    color: #fff;
+}
+
+.living-breadcrumb span {
+    margin: 0 10px;
+    color: #888;
+}
+
+.living-breadcrumb .active {
+    color: #fff;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .living-header-section {
+        height: 250px;
+    }
+    .living-title {
+        font-size: 32px;
+    }
+    .living-subtitle {
+        font-size: 15px;
+    }
+}
+/*LIVING ROOM ADD TO CART*/
+/* Layout & Container */
+.shop-wrapper { display: flex; gap: 40px; padding: 60px 0; }
+
+/* Sidebar Styling */
+.filter-sidebar { flex: 1; max-width: 260px; }
+.filter-block { margin-bottom: 40px; border-bottom: 1px solid #f0f0f0; padding-bottom: 20px; }
+.filter-block h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; color: #111; }
+
+/* Custom Checkbox */
+.custom-check { display: block; position: relative; padding-left: 30px; margin-bottom: 12px; cursor: pointer; font-size: 15px; color: #555; }
+.custom-check input { display: none; }
+.checkmark { position: absolute; top: 2px; left: 0; height: 18px; width: 18px; border: 1.5px solid #ddd; border-radius: 4px; }
+.custom-check input:checked ~ .checkmark { background: #000; border-color: #000; }
+
+/* Color Picker Styling */
+.color-picker { display: flex; gap: 12px; }
+.color-circle { width: 22px; height: 22px; border-radius: 50%; border: 1px solid #eee; cursor: pointer; transition: 0.3s; }
+.color-circle:hover { transform: scale(1.2); }
+.dark { background: #3e2723; } .oak { background: #d7ccc8; } .gray { background: #9e9e9e; } .white { background: #fff; }
+
+/* Product Grid */
+.products-main { flex: 3; }
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+/* Modern Product Card Styling */
+.modern-product-card { 
+    background: #fff; 
+    border-radius: 12px; /* Smooth rounded corners */
+    overflow: hidden; 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.product-image-container { 
+    position: relative; 
+    background: #f8f8f8; 
+    border-radius: 12px; /* Card ke andar image par bhi radius */
+    padding: 10px;
+}
+
+.product-image-container img { width: 100%; height: auto; transition: 0.5s; }
+
+/* Hover Effects */
+.modern-product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+.modern-product-card:hover img { transform: scale(1.05); }
+
+/* Overlay Buttons appear on Hover */
+.product-overlay-buttons { 
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); 
+    display: flex; gap: 10px; opacity: 0; transition: 0.4s; 
+}
+.modern-product-card:hover .product-overlay-buttons { opacity: 1; bottom: 30px; }
+
+.icon-btn { 
+    background: #fff; border: none; width: 45px; height: 45px; border-radius: 50%; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); cursor: pointer; display: flex; 
+    align-items: center; justify-content: center; font-size: 18px; transition: 0.3s;
+}
+.icon-btn:hover { background: #000; color: #fff; }
+
+/* Info Section Styling */
+.product-info { padding: 20px 5px; text-align: left; }
+.product-name { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #111; }
+.product-price { font-size: 15px; color: #666; font-weight: 500; }
+
+/*KITCHEN HEADER*//*BED ROOM HEADER*/
+/* Sirf Kitchen ke liye image */
+.kitchen-header {
+    width: 100%;
+    height: 350px;
+    background-image: url('asset/images/kitchen06.webp'); /* Yahan kitchen ki image lagayein */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Sirf Bedroom ke liye image */
+.bedroom-header {
+    width: 100%;
+    height: 350px;
+    background-image: url('asset/images/bed002.webp'); /* Yahan bedroom ki image lagayein */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*BLOG*/
+.blog-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.blog-card {
+    margin-bottom: 50px;
+}
+
+/* Image section with left-aligned heading */
+.blog-image {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.blog-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-overlay-title {
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Center nahi hai, left side par hai */
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Content styling based on your screenshot */
+.post-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.post-excerpt {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #888;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+/* Layout Container */
+.blog-page-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Blog 70%, Sidebar 30% */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Left Side - Blog Cards */
+.blog-card {
+    margin-bottom: 60px;
+}
+
+.blog-image-box {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Images ki length yahan se control hogi */
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.blog-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image stretch nahi hogi */
+}
+
+.image-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 0;
+}
+
+.post-heading {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.post-text {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-read-more {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 12px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.post-info-footer {
+    font-size: 13px;
+    color: #999;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+/* Right Side - Sidebar */
+.blog-sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+.widget-title {
+    font-size: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.social-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 2px;
+}
+
+.facebook { background: #e7f0ff; color: #1877f2; }
+.x-twitter { background: #f0f0f0; color: #000; }
+.instagram { background: #fdf0f5; color: #e1306c; }
+.youtube { background: #ffeeee; color: #ff0000; }
+
+.follow-txt {
+    font-size: 11px;
+    text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .blog-page-layout {
+        grid-template-columns: 1fr;
+    }
+    .blog-sidebar {
+        position: static;
+    }
+}
+.blog-main-heading {
+    max-width: 1200px;   /* Layout ki width ke barabar */
+    margin: 40px auto 20px auto; /* Center layout ke hisab se, lekin text left hi rahega */
+    padding: 0 20px;     /* Side se thoda gap */
+    
+    font-size: 42px;     /* Bari aur wazeh heading */
+    font-weight: 800;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Optional: Heading ke niche ek choti line dene ke liye */
+.blog-main-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #000;
+    margin-top: 10px;
+}
+
+/* Mobile ke liye size adjust karein */
+@media (max-width: 768px) {
+    .blog-main-heading {
+        font-size: 28px;
+    }
+}
+.blog-main-heading {
+    /* ... purana code ... */
+    margin-top: 20px !important; /* Isay kam karke 10px ya 0px karke dekhein */
+    padding-top: 0 !important;
+}
+
+/* World wide delivery wale section ka bottom margin kam karein */
+.delivery-section-class { /* Aapne jo bhi class di hai delivery bar ko */
+    margin-bottom: 0 !important;
+}
+.blog-main-heading {
+    margin-top: -15px !important; /* Isse heading upar ki taraf khinchegi */
+}
+/*ORDER TRACKING*/
+.tracking-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    font-family: 'Inter', sans-serif;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.order-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Progress Tracker Styling */
+.track-wrapper {
+    position: relative;
+    padding: 20px 0 50px;
+}
+
+.track-line {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #eee;
+    z-index: 1;
+}
+
+.track-fill {
+    height: 100%;
+    background: #000; /* Modern Black Theme */
+    transition: width 0.5s ease;
+}
+
+.track-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.step {
+    text-align: center;
+    width: 100px;
+}
+
+.step-icon {
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    border: 2px solid #eee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.step.completed .step-icon {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.step.active .step-icon {
+    border-color: #000;
+    color: #000;
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.1);
+}
+
+.step p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #999;
+}
+
+.step.active p, .step.completed p {
+    color: #000;
+}
+
+/* Items List */
+.order-items {
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.item-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.item-row img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.item-info h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.item-info span {
+    font-size: 13px;
+    color: #888;
+}
+
+.item-price {
+    margin-left: auto;
+    font-weight: bold;
+}
+/*NAV RESPONSIVE*/
+/* Mobile Responsive Media Query */
+@media (max-width: 992px) {
+    /* Top bar ko chupa dein taake space bane */
+    .top-bar { display: none; }
+
+    /* Header Main layout */
+    .header-main { flex-wrap: wrap; padding: 10px; }
+    
+    .hamburger { display: block; cursor: pointer; order: 1; }
+    .hamburger span { display: block; width: 25px; height: 3px; background: #000; margin: 4px 0; }
+    
+    .logo-area { order: 2; flex: 1; text-align: center; }
+    .icons-area { order: 3; }
+    .search-area { order: 4; width: 100%; margin-top: 10px; }
+
+    /* Navigation Mobile par */
+    .nav-list {
+        display: none; /* Default hidden */
+        flex-direction: column;
+        background: #fff;
+        width: 100%;
+        gap: 10px;
+        padding: 20px;
+        border-top: 1px solid #eee;
+    }
+    .nav-list.active { display: flex; } /* JavaScript se toggle hoga */
+    .nav-list li { margin: 0; text-align: center; }
+}
+
+/* Desktop ke liye hamburger chhupa dein */
+@media (min-width: 993px) {
+    .hamburger { display: none; }
+}
+/* --- NAYA RESPONSIVE CODE (File ke bilkul end mein paste karein) --- */
+
+/* Desktop par mobile-only links chhupayein */
+.top-bar-mobile { display: none; }
+
+@media (max-width: 992px) {
+    /* 1. Desktop wali Black Bar mobile par hide kar dein */
+    .top-bar { display: none; }
+    
+    /* 2. Hamburger icon ki styling */
+    .hamburger { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 5px; 
+        cursor: pointer; 
+        order: 0; 
+    }
+    .hamburger span { width: 25px; height: 3px; background: #000; }
+    
+    /* 3. Header alignment */
+    .header-main { flex-wrap: wrap; padding: 15px; }
+    .logo-area { order: 1; flex: 1; text-align: center; }
+    .icons-area { order: 2; }
+    .search-area { order: 3; width: 100%; margin-top: 15px; }
+    
+    /* 4. Nav-list ko mobile par vertical banayein */
+    .nav-list {
+        display: none; /* Default hidden */
+        flex-direction: column;
+        width: 100%;
+        background: #f8f8f8;
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+        border-top: 1px solid #ddd;
+    }
+    .nav-list.active { display: flex; } /* Click par show hoga */
+    
+    /* 5. Mobile mein top-bar links show karein */
+    .top-bar-mobile { 
+        display: block; 
+        border-bottom: 1px solid #ddd; 
+        padding-bottom: 10px; 
+        font-weight: bold;
+    }
+}
+
+/* Desktop ke liye Hamburger ko hata dein */
+@media (min-width: 993px) {
+    .hamburger { display: none; }
+}
+/*FEATURE GRID*/
+/* Mobile Responsive Grid Fix */
+@media (max-width: 992px) {
+    .main-feature-grid {
+        display: grid;
+        /* Mobile par sab cheezein ek ke neeche ek (single column) */
+        grid-template-columns: 1fr; 
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .right-col {
+        padding-top: 0; /* Mobile par upar ki space hata di */
+    }
+
+    .left-col h2 {
+        font-size: 28px; /* Mobile ke liye font thoda chota */
+        text-align: center;
+    }
+
+    .small-prod, .big-img-container, .product-card {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/*PRODUCTS & SIDEBAR RESPONSIVE*/
+/* 1. Desktop Layout (Jaisa abhi hai) */
+.shop-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.filter-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Desktop par 3 columns */
+    gap: 20px;
+}
+
+/* 2. Mobile Responsive Fix (Line-by-line karne ke liye) */
+@media (max-width: 992px) {
+    .shop-wrapper {
+        flex-direction: column; /* Sidebar upar, products neeche */
+    }
+
+    .filter-sidebar {
+        width: 100%; /* Sidebar puri width le legi */
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Mobile par sirf 1 column */
+        gap: 15px;
+    }
+
+    .modern-product-card {
+        width: 100%; /* Product card puri width le lega */
+        display: flex; /* Image aur info ko horizontal karne ke liye */
+        align-items: center;
+        text-align: left;
+    }
+    
+    .product-image-container {
+        width: 120px; /* Mobile par image choti aur fix size ki */
+        flex-shrink: 0;
+    }
+}
+
+
+
